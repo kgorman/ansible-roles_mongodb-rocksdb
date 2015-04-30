@@ -1,7 +1,7 @@
 ansible-roles_mongodb_install
 =========
 
-Installs [MongoDB](http://www.mongodb.org) and starts up a nice base configuration including base security that should be pre-set for high performance.
+Installs [MongoDB](http://www.mongodb.org) and starts up a nice base configuration using the RocksDB engine developed by Facebook including base security and base settings for high performance.
 
 Role Variables
 --------------
@@ -37,7 +37,7 @@ $>cat test.yml
 ---
 - hosts: mongoservers
   roles:
-  - { role: ansible-roles_mongodb-install }
+  - { role: ansible-roles_mongodb-rocksdb }
 ```
 
 ```yaml
@@ -70,4 +70,3 @@ Author Information
 [Twitter](http://www.twitter.com/kennygorman)
 
 [Github](https://github.com/kgorman)
-# ansible-roles_mongodb_rocksdb
