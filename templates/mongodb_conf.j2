@@ -1,0 +1,17 @@
+storage:
+    dbPath: {{ mongodb_datadir_prefix }}
+    engine: {{ mongodb_storage_engine }}
+    mmapv1:
+        smallFiles: true
+    rocksdb:
+        cacheSizeGB: 50
+        compression: snappy
+systemLog:
+    destination: syslog
+processManagement:
+    fork: true
+security:
+    authorization: enabled
+    keyFile: {{ mongodb_config_location }}{{ mongodb_keyfile_name }}
+net:
+   port: {{ mongodb_port }}

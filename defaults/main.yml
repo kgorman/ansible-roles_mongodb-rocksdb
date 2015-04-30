@@ -1,0 +1,21 @@
+---
+# defaults file for ansible-roles_mongodb-install
+
+# The version of MongoDB
+mongodb_version: 2.6.4
+
+# The port for mongodb server
+mongodb_port: 9005
+
+# The directory prefix where the database files would be stored
+mongodb_datadir_prefix: /data/mongodb/
+
+# Keyfile key. Not needed with simple setups, but anytime there is Auth+RS sharding it's needed
+# see: http://docs.mongodb.org/manual/tutorial/generate-key-file/
+mongodb_keyfile_key: 25cf454c8a1437ad650fd0c7adb9a5e3
+
+# storage engine to use (2.8+)
+mongodb_storage_engine: rocksdb
+
+mongodb_admin_user: dba
+mongodb_admin_pass: f7e157e3ec0d049a4a674fe97342eb81
