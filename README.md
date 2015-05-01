@@ -3,6 +3,10 @@ ansible-roles_mongodb-rocksdb
 
 Installs [MongoDB](http://www.mongodb.org) and starts up a nice base configuration using the [RocksDB](http://rocksdb.org/blog/1967/integrating-rocksdb-with-mongodb-2/) engine developed by Facebook including base security and base settings for high performance.
 
+It should be noted this builds RocksDB and MongoDB from source, so it takes a *while* to build.
+
+More info on [RocksDB here](https://github.com/mongodb-partners/mongo-rocks).
+
 Role Variables
 --------------
 

@@ -23,10 +23,9 @@
 - git: repo=https://github.com/facebook/rocksdb.git dest=/opt/rocksdbsrc/
 - shell: cd /opt/rocksdbsrc; git checkout mongorocks; make static_lib; make install
 
-- shell: rm -rf /opt/mongodb
-- git: repo=https://github.com/mongodb-partners/mongo.git dest=/opt/mongodb/
-- shell: cd /opt/mongodb; git checkout v3.0-mongorocks; scons mongo mongod --rocksdb=1
-- shell: mkdir /opt/mongodb/bin; mv /opt/mongodb/mongod /opt/mongodb/bin
+- shell: rm -rf /opt/mongodbsrc; rm -rf /opt/mongodb; mkdir /opt/mongodb
+- git: repo=https://github.com/mongodb-partners/mongo.git dest=/opt/mongodbsrc/
+- shell: cd /opt/mongodbsrc; git checkout v3.0-mongorocks; scons all --rocksdb=1 --prefix=/opt/{{ mongodb_binaries_dir }}/bin
 
 - file: path=/opt/{{ mongodb_binaries_dir }} owner={{ mongodb_user }} group={{ mongodb_group }}
 
